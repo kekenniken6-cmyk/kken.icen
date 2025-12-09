@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>icenn.Shop</title>
+  <link rel="stylesheet" href="icn.css" />
+
+  <!-- Library QR Code -->
+  <script src="kkn.js"></script>
+ 
+  </head>
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+    <h2>Minyak Kemiri Bakar</h2>
+    <p>Selamat datang di toko resmi kami</p>
+    <button onclick="enterShop()">Masuk ke Toko</button>
+  </div>
+
+  <!-- MAIN SHOP -->
+  <div class="shop-container" id="shop" style="display: none;">
+
+    <header class="header">
+      Minyak Kemiri Bakar - Toko Resmi
+    </header>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="https://i.ibb.co/0FQy4k7/minyak-60ml.jpg">
+        <h3>Minyak Kemiri 60ml (3 Botol)</h3>
+        <p>Rp 45.560</p>
+        <button onclick="addToCart('60ml', 45560)">Tambah</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.ibb.co/4ZgkC1q/minyak-100ml.jpg">
+        <h3>Minyak Kemiri 100ml (3 Botol)</h3>
+        <p>Rp 75.240</p>
+        <button onclick="addToCart('100ml', 75240)">Tambah</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.ibb.co/8Kq2fYj/minyak-250ml.jpg">
+        <h3>Minyak Kemiri 250ml (3 Botol)</h3>
+        <p>Rp 106.920</p>
+        <button onclick="addToCart('250ml', 106920)">Tambah</button>
+      </div>
+
+    </div>
+
+    <!-- CART -->
+    <div class="cart">
+      <h3>Keranjang</h3>
+      <div id="cart-items"></div>
+
+      <p>Subtotal: <span id="subtotal">Rp 0</span></p>
+      <p>Ongkir: <span id="shipping">Rp 0</span></p>
+      <h2>Total: <span id="total">Rp 0</span></h2>
+
+      <button onclick="openCheckout()">Checkout</button>
+      <button onclick="clearCart()">Hapus Semua</button>
+    </div>
+
+    <!-- CHECKOUT -->
+    <div id="checkout-modal" class="modal">
+      <div class="modal-box">
+        <h3>Data Pemesan</h3>
+
+        <input type="text" id="name" placeholder="Nama" />
+        <input type="text" id="phone" placeholder="No HP" />
+        <textarea id="address" placeholder="Alamat"></textarea>
+
+        <button onclick="showCOD()">Pesan (COD)</button>
+        <button onclick="closeCheckout()">Batal</button>
+      </div>
+    </div>
+
+<!-- COD -->
+<div id="cod-modal" class="modal">
+  <div class="modal-box">
+    <h3>Pembayaran COD (Bayar di Tempat)</h3>
+
+    <p>Total yang harus dibayar:</p>
+    <h2 id="finalTotal"></h2>
+
+    <p>Silakan siapkan uang saat pesanan sampai di alamat Anda.</p>
+
+    <button onclick="finishOrder()">Pesanan Siap Diproses</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
